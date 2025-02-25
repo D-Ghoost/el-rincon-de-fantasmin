@@ -1,10 +1,14 @@
 name: Deploy to GitHub Pages
 
 on:
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
+# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
@@ -12,41 +16,29 @@ permissions:
 
 jobs:
   build:
-    runs-on: Ubuntu-Latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v44
         with:
-          node-version: 20
-      - name: Build your site
-        uses: withastro/astro-action@v3
+          version: 7.0.0  # specify the desired version here
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build your site      - name: Build your site
+        run: pnpm run buildun: pnpm run build
+      - name: Upload your siteload your site
+        uses: withastro/action@v3tion@v3
         with:
-          path: .
-          pnpm_version: latest
-          command: build
-          build-dir: dist
-      - name: Upload built site
-        uses: actions/upload-artifact@v3
-        with:
-          name: site
-          path: dist/
-
+          path: . # The root location of your Astro project inside the repository. (optional)root location of your Astro project inside the repository. (optional)
   deploy:
-    needs: build
-    runs-on: Ubuntu-Latest
-    environment:
-      name: GitHub-Pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Download built site
-        uses: actions/download-artifact@v3
-        with:
-          name: site
-          path: .
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          path: .
+      needs: build
+      runs-on: ubuntu-latest
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      steps:
+        - name: Deploy to GitHub Pages
+          id: deployment
+          uses: actions/deploy-pages@v4
