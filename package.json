@@ -10,15 +10,6 @@
   },
   "dependencies": {
     "astro": "^2.4.5"
-  },
-  "pnpm": {
-    "ignoredBuiltDependencies": [
-      "esbuild",
-      "sharp"
-    ]
-  },
-  "engines": {
-    "node": ">=10",
-    "pnpm": ">=3"
   }
+
 }
