@@ -1,20 +1,59 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
 const posts = await Astro.glob('./posts/*.md');
-// console.log('-- POSTS --');
-// console.log(posts);
-// console.log('-- POSTS URL --');
-// console.log(posts.map(post => post.url));
-// console.log('-- POST FRONTMATTER --');
-// console.log(posts.map(post => post.frontmatter));
+console.log(' --- posts ---');
+console.log(posts.map(post => post.url));
 ---
 <Layout>
-    <h1>Blog</h1>
-    {
-        posts.map( post => (
-            <article>
-                
-            </article>
-        ))
-    }
+    <h1>Blog personal</h1>
+    <section>
+        <ul>
+            {
+                posts.map(post =>(
+                    <li>
+                        <a href={post.url} >
+                            <h3 class="title-post" >{post.frontmatter.title}</h3>
+                            <p class="description-post" >{post.frontmatter.description}</p>
+                            <p class="date-post">{post.frontmatter.date}</p>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </section>
 </Layout>
+<style>
+    h1{
+        margin: 1.5rem .5rem;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    li{
+        padding: 1.5rem;
+        border: 0.15rem solid #cacacaec;
+        border-radius: 0.5em;
+    }
+    li:hover{
+        background-color: #f1f1f1;
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .title-post{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .description-post{
+        font-size: 1.2rem;
+
+    }
+    .date-post{
+        font-size: .85rem;
+        color: #333;
+    }
+
+</style>
