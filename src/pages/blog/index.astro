@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+const posts = await Astro.glob('./posts/*.md');
+// console.log('-- POSTS --');
+// console.log(posts);
+// console.log('-- POSTS URL --');
+// console.log(posts.map(post => post.url));
+// console.log('-- POST FRONTMATTER --');
+// console.log(posts.map(post => post.frontmatter));
+---
+<Layout>
+    <h1>Blog</h1>
+    {
+        posts.map( post => (
+            <article>
+                
+            </article>
+        ))
+    }
+</Layout>

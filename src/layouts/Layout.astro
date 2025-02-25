@@ -1,6 +1,7 @@
 ---
 import '../style/global.css';
 import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -8,6 +9,7 @@ import BaseHead from '../components/BaseHead.astro'
 		<BaseHead />
 	</head>
 	<body>
+		<Header/>
 		<slot />
 	</body>
 </html>
