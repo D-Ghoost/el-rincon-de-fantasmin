@@ -3,7 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 
 const posts = await Astro.glob('./posts/*.md');
 console.log(' --- posts ---');
-console.log(posts.map(post => post.url));
+
 ---
 <Layout>
     <h1>Blog personal</h1>
