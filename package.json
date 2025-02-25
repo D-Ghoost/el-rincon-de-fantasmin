@@ -16,5 +16,9 @@
       "esbuild",
       "sharp"
     ]
-  }
+  },
+  "engines": {
+        "node": ">=10",
+        "pnpm": ">=3"
+    }
 }
