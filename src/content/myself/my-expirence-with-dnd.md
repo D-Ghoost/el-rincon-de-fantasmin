@@ -2,6 +2,8 @@
 title: Mi experiencia con D&D (Dungeons & Dragons)
 date: 28/02/2025
 description: Mi experiencia con el juego de rol Dungeons & Dragons desde que lo descubrí hasta la actualidad.
+slug: my-experience-with-dnd
+tags: ["D&D", "juegos de rol", "aventuras", "creatividad"]
 ---
 ## Descubriendo un nuevo mundo
 La primera vez que escuché hablar de Dungeons & Dragons fue a través de un amigo que me contó sobre las partidas que solía jugar con su grupo. Me llamó la atención la idea de crear un personaje, explorar un mundo de fantasía y enfrentarme a desafíos épicos. Así que decidí unirme a una de sus partidas para probarlo por mí mismo. Desde ese momento, quedé enganchado.
