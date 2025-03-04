@@ -4,4 +4,4 @@ Este es mi pequeño rincón en el mundo donde comparto mis pensamientos, ideas y
 
 Las tecnologías que utilice para crearlo fueron: Git, GitHub, Markdown, HTML, CSS, JavaScript, Astro.
 
-👷_**Nota:** Este proyecto fue creado con la intención de aprender Astro, por lo que no es un proyecto terminado._ 👷
+👷**Nota:** Este proyecto fue creado con la intención de aprender Astro, por lo que no es un proyecto terminado. 👷
