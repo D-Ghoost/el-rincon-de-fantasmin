@@ -60,8 +60,7 @@ body {
 }
 
 main{
-	height: 100dvh;
-	padding: 1rem;
+	margin: 1rem;
 }
 
 h2{
