@@ -3,7 +3,7 @@ title: "Mi experiencia con D&D (Dungeons & Dragons)"
 date: "28/02/2025"
 description: "Mi experiencia con el juego de rol Dungeons & Dragons desde que lo descubrí hasta la actualidad."
 slug: "my-experience-with-dnd"
-tags: ["D&D", "juegos de rol", "aventuras", "creatividad"]
+tags: ["D&D", "juegos de rol", "juegos"]
 # cover: "/img/escr-exp-rd.jpg"
 cover: "/img/dnd-exp.jpg"
 coverAlt: "Taberna de fantasía con personajes con capuchas y armaduras"

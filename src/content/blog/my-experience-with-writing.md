@@ -1,8 +1,11 @@
 ---
-layout: ../../../layouts/BlogPostLayout.astro
 title: "Mi experiencia con la escritura"
 date: "24/02/2025"
 description: "Mi experiencia con la escritura desde mi infancia hasta la actualidad."
+slug: "my-experience-with-writing"
+tags: ["experiencia", "tareas"]
+cover: "/img/escr-exp-rd.jpg"
+coverAlt: "Libros y lapiceros esparcidos sobre una mesa de madera"
 ---
 ## Desde el principio...
 Cuando era pequeño, la lectura y la escritura no eran precisamente mi fuerte. Siempre me incliné más por las caricaturas, las películas animadas, los videojuegos y la música. Sin embargo, al llegar a la adolescencia, me di cuenta de que algunas de las cosas que me gustaban estaban basadas en novelas o, lo que me resultó aún más interesante, en cómics y mangas. Poco a poco, comencé a adentrarme en el proceso de escritura de una historia, la creación de personajes, los estilos de dibujo, etc.
