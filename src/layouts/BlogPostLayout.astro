@@ -4,10 +4,9 @@ import BaseHead from "../components/BaseHead.astro"
 import Footer from "../components/Footer.astro"
 import Header from "../components/Header.astro"
 
-type Props = CollectionEntry<'myself'>['data'];
+type Props = CollectionEntry<'blog'>['data'];
 const { title, date, tags, cover,coverAlt } = Astro.props;
-console.log('-- title --');
-console.log(title);
+
 ---
 <!doctype html>
 <html lang="es">

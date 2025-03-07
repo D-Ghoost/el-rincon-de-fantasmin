@@ -4,7 +4,7 @@ import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 
 
 export async function getStaticPaths() {
-    const post = await getCollection('myself');
+    const post = await getCollection('blog');
     return post.map(( post ) => (
         {
             params: { slug: post.slug },
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
         }
     ));
 }
-type Props = CollectionEntry<'myself'>;
+type Props = CollectionEntry<'blog'>;
 const post = Astro.props;
 
 console.log( post );
