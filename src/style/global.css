@@ -61,6 +61,7 @@ body {
 
 main{
 	margin: 1rem;
+	min-height: 90dvh;
 }
 
 h2{
