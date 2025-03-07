@@ -1,7 +1,7 @@
 ---
 title: "Mi experiencia con D&D (Dungeons & Dragons)"
 date: "28/02/2025"
-description: "Descubre cómo fue mi aventura en el mundo de Dungeons & Dragons, un juego de rol lleno de magia y emoción."
+description: "Mi experiencia con el juego de rol Dungeons & Dragons desde que lo descubrí hasta la actualidad."
 slug: "my-experience-with-dnd"
 tags: ["D&D", "juegos de rol", "aventuras", "creatividad"]
 # cover: "/img/escr-exp-rd.jpg"
