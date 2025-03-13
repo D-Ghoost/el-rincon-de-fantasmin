@@ -1,14 +1,19 @@
 ---
 import { SITE_TITLE } from "../const";
+import BurgerMenu from "./icons/BurgerMenu.astro";
 ---
 
 <header>
-    <nav>
+    <nav role="navigation" class="navbar">
         <h2><a href="/">{ SITE_TITLE }</a></h2>
-        <div class="nav-links">
+        <div class="navbar__nav-links">
             <a href="/blog">Blog</a>
         </div>
+        <BurgerMenu className="navbar__burger-menu"/>
     </nav>
+    <section class="navbar__burger-menu--nav-links" id="burgerMenuLinks">
+        <a href="/blog">Blog</a>
+    </section>
 </header>
 
 <style>
@@ -17,23 +22,86 @@ import { SITE_TITLE } from "../const";
         color: white;
         padding: 1rem;
     }
-    nav{
+    .navbar{
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    nav h2 {
+    .navbar h2 {
         margin: 0;
     }
 
-    nav a {
+    .navbar a {
         color: white;
         text-decoration: none;
+    }
+    
+    .navbar__burger-menu--nav-links{
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        max-height: 0;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 0 1rem;
+        transition: max-height 0.3s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+    .navbar__burger-menu--nav-links a{
+        opacity: 0;
+        visibility: hidden;
+        padding: 0 1rem;
+        text-decoration: none;
+        color: white;
+        margin: 0.5rem 0;
+        transition: none; 
     }
     h2 {
         font-weight: bold;
         letter-spacing: 0.15rem;
     }
-    
 
+    .navbar__burger-menu--nav-links.show {
+        opacity: 1;
+        visibility: visible;
+        max-height: 500px;
+        padding: 1rem;
+    }
+
+    .navbar__burger-menu--nav-links.show a {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    @media only screen and (max-width: 490px){
+        .navbar h2 {
+            font-size: 1.5rem;
+        }
+
+        .navbar a {
+            font-size: 1rem;
+        }
+
+        .navbar__nav-links {
+            display: none;
+        }
+
+        .navbar {
+            justify-content: space-between;
+        }
+    }
 </style>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const burgerMenu = document.querySelector('.navbar__burger-menu');
+        const burgerMenuLinks = document.getElementById('burgerMenuLinks');
+
+        if (burgerMenu && burgerMenuLinks) {
+            burgerMenu.addEventListener('click', () => {
+                burgerMenuLinks.classList.toggle('show');
+            });
+        }
+        
+    });
+</script>
