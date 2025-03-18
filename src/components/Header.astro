@@ -1,15 +1,27 @@
 ---
-import { SITE_TITLE } from "../const";
-import BurgerMenu from "./icons/BurgerMenu.astro";
+import { Picture } from 'astro:assets';
+import { SITE_TITLE } from '../const';
+import logo from '../assets/images/logo_compress.png';
 ---
 
 <header>
     <nav role="navigation" class="navbar">
-        <h2><a href="/">{ SITE_TITLE }</a></h2>
+            <h2>
+                <a href="/">
+                    <Picture src={ logo } alt="Un fantasma con ojos tiernos"/>
+                    { SITE_TITLE }
+                    <Picture src={ logo } alt="Un fantasma con ojos tiernos"/>
+                </a>
+            </h2>
         <div class="navbar__nav-links">
             <a href="/blog">Blog</a>
         </div>
-        <BurgerMenu className="navbar__burger-menu"/>
+        <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+        <svg class="navbar__burger-menu" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 18L20 18" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4 12L20 12" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/>
+        <path d="M4 6L20 6" stroke="currentcolor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
     </nav>
     <section class="navbar__burger-menu--nav-links" id="burgerMenuLinks">
         <a href="/blog">Blog</a>
@@ -29,13 +41,28 @@ import BurgerMenu from "./icons/BurgerMenu.astro";
     }
     .navbar h2 {
         margin: 0;
+        font-size: 1.7rem;
     }
 
     .navbar a {
         color: white;
         text-decoration: none;
     }
-    
+    .navbar img{
+        width: 3rem;
+        height: auto;
+        vertical-align: middle;
+    }
+    .navbar__burger-menu{
+        display: none;
+    }
+    .navbar__burger-menu{
+        color: #e2e2e2;
+    }
+    .navbar__burger-menu {
+        width: 2rem;
+        height: auto;
+    }
     .navbar__burger-menu--nav-links{
         opacity: 0;
         visibility: hidden;
@@ -82,6 +109,10 @@ import BurgerMenu from "./icons/BurgerMenu.astro";
         .navbar a {
             font-size: 1rem;
         }
+        .navbar img{
+            width: 1.7rem;
+
+        }
 
         .navbar__nav-links {
             display: none;
@@ -90,18 +121,31 @@ import BurgerMenu from "./icons/BurgerMenu.astro";
         .navbar {
             justify-content: space-between;
         }
+        .navbar__burger-menu {
+            display: block;
+        }
     }
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const burgerMenu = document.querySelector('.navbar__burger-menu');
         const burgerMenuLinks = document.getElementById('burgerMenuLinks');
+        const mediaQuery = window.matchMedia('(max-width: 490px)');
 
         if (burgerMenu && burgerMenuLinks) {
             burgerMenu.addEventListener('click', () => {
                 burgerMenuLinks.classList.toggle('show');
             });
+
+            const closeMenu = () => {
+                burgerMenuLinks.classList.remove('show');
+            };
+
+            mediaQuery.addEventListener('change', (e) => {
+                if (!e.matches) { 
+                    closeMenu();
+                }
+            });
         }
-        
     });
 </script>
