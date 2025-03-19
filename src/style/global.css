@@ -84,6 +84,24 @@ p{
 	margin-bottom: 1rem;
 }
 
+blockquote {
+    font-weight: 500;
+    font-style: italic;
+}
+
 .strong{
 	font-weight: bold;
+}
+
+@media only screen and (  width <= 490px){
+	main{
+		padding: 1rem 0.5rem;
+	}
+	h2{
+		font-size: 2rem;
+	}
+	p{
+		font-size: 1.2rem;
+	}
+	
 }

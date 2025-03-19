@@ -16,21 +16,21 @@ const { title, date, tags, cover,coverAlt } = Astro.props;
 	<body>
 		<Header/>
 		<main>
-			<article>
-				<img  src={ cover } alt={ coverAlt } class="cover" />
-				<div class="container">	
+			<article class="blog-post">
+				<img  src={ cover } alt={ coverAlt } class="blog-post__cover" />
+				<section class="blog-post__container">	
 					<h2>{ title }</h2>
 					<div>
-						<h4>{ date }</h4>
 						{ tags.map( (tag : string) => (
-							<div>
+							<div class="blog-post__tags">
 								<h4>{ tag }</h4>
 							</div>
 						)) }
+						<h4 class="blog-post__date">{ date }</h4>
 					</div>
 					<hr />
 					<slot/>
-				</div>
+				</section>
 			</article>
 		</main>
 		<Footer />
@@ -38,8 +38,93 @@ const { title, date, tags, cover,coverAlt } = Astro.props;
 </html>
 
 <style>
-	.cover{
-		width: 100%;
+	.blog-post{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: var(--background-color);
+		color: var(--text-color);
+		padding: 1rem;
+	}
+	.blog-post__cover{
+		max-width: 70%;
 		height: 50vh;
+		object-fit: cover;
+		margin: 0 auto;
+		border-radius: 1rem;
+	}
+	.blog-post__container{
+		max-width: 70%;
+		margin: 1.5rem auto;
+	}
+
+	.blog-post__container h2{
+		margin: 0;
+		font-size: 2rem;
+	}
+
+	.blog-post__tags{
+		display: inline-block;
+		margin: 0.5rem 0.5rem;
+		padding: 0.5rem 1rem;
+		background-color: var(--main-color);
+		color: var(--text-color-light);
+		text-align: center;
+		border-radius: 1rem;
+	}
+	.blog-post__tags:nth-child(1){
+		margin-left: 0;
+	}
+	.blog-post__tags:nth-child(2){
+		margin-left: 0.5rem;
+	}
+	.blog-post__tags h4{
+		margin: 0;
+		font-size: 1rem;
+	}
+	.blog-post__date{
+		margin: 0;
+		font-size: 1rem;
+		color: #666;
+	}
+	.cita {
+		font-style: italic;
+		font-weight: 500;
+	}
+
+	@media only screen and (  width <= 490px){
+		.blog-post{
+			padding: 0.5rem;
+		}
+		.blog-post__cover{
+			max-width: 100%;
+			height: auto;
+		}
+		.blog-post__container{
+			max-width: 100%;
+			margin: 0 auto;
+			padding: 0 1rem;
+		}
+		.blog-post__container h2{
+			font-size: 1.5rem;
+		}
+		.blog-post__tags{
+			margin: 0.5rem 0;
+			padding: 0.5rem 1rem;
+			font-size: 0.8rem;
+		}
+		.blog-post__tags h4{
+			font-size: 0.8rem;
+		}
+		.blog-post__tags:nth-child(1){
+			margin-left: 0;
+		}
+		.blog-post__tags:not(:first-child){
+			margin-left: 0.5rem;
+		}
+		.blog-post__date{
+			font-size: 0.8rem;
+		}
+
 	}
 </style>	
