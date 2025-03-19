@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "5.4.2"
+    "astro": "5.4.2",
+    "sharp": "^0.33.5"
   },
   "packageManager": "pnpm@10.4.1"
 }
