@@ -2,7 +2,8 @@
 const today = new Date();
 ---
 <footer>
-    &copy; {today.getFullYear()} Nicolás Torres(alias Fantasmin). All rights reserved.
+    <h6>&copy; {today.getFullYear()} Nicolás Torres López (alias Fantasmin).</h6>
+    <h6>Derechos educativos, uso permitido con atribución y sin fines comerciales.</h6>
 </footer>
 <style>
     footer{
@@ -10,7 +11,15 @@ const today = new Date();
         text-align: center;
         bottom: 0;
         height: auto;
-        background-color: #333;
-        color: white;
+        background-color: var(--main-color);
+        color: var(--text-color-light);
     }
+    footer h6{
+        margin: 0;
+        font-size: 0.8rem;
+    }
+    footer h6:nth-child(2){
+        font-size: 0.7rem;
+    }
+    
 </style>

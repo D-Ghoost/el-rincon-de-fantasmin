@@ -30,8 +30,8 @@ import logo from '../assets/images/logo_compress.png';
 
 <style>
     header {
-        background-color: #333;
-        color: white;
+        background-color: var(--main-color);
+        color: var(--background-color);
         padding: 1rem;
     }
     .navbar{
@@ -45,7 +45,7 @@ import logo from '../assets/images/logo_compress.png';
     }
 
     .navbar a {
-        color: white;
+        color: var(--text-color-light);
         text-decoration: none;
     }
     .navbar img{
@@ -57,7 +57,7 @@ import logo from '../assets/images/logo_compress.png';
         display: none;
     }
     .navbar__burger-menu{
-        color: #e2e2e2;
+        color: var(--text-color-light);
     }
     .navbar__burger-menu {
         width: 2rem;
@@ -68,8 +68,7 @@ import logo from '../assets/images/logo_compress.png';
         visibility: hidden;
         overflow: hidden;
         max-height: 0;
-        background-color: #333;
-        color: white;
+        color: var(--text-color-light);
         text-align: center;
         padding: 0 1rem;
         transition: max-height 0.3s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -79,7 +78,7 @@ import logo from '../assets/images/logo_compress.png';
         visibility: hidden;
         padding: 0 1rem;
         text-decoration: none;
-        color: white;
+        color: var(--text-color-light);
         margin: 0.5rem 0;
         transition: none; 
     }

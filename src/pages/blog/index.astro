@@ -34,23 +34,7 @@ const blogEntries = await getCollection('blog');
                             </div>
                         </a>
                     </li>
-                     <li class="blog-entry">
-                        <a href={`/blog/${entry.slug}/`}>
-                            <img src={entry.data.cover} alt={entry.data.coverAlt} />
-                            <div class="blog-entry__content">
-                                <h3>{ entry.data.title }</h3>
-                                <h4>{ entry.data.description }</h4>
-                                <h5>{ entry.data.date }</h5>
-                                <div class="blog-entry__content__tags">
-                                    {
-                                    entry.data.tags.map( ( tag : string ) => (
-                                        <h6>{ tag }</h6>
-                                    ))
-                                }
-                                </div>
-                            </div>
-                        </a>
-                    </li>
+                     
                 ))
             }
         </ul>

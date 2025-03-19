@@ -1,6 +1,13 @@
-<h2>Hola, soy Nicolás 👻</h2>
+---
+import { Picture } from 'astro:assets';
+import profilePhoto from '../assets/images/recorte_nico_bass.png';
+---
+<section class="welcome">
+  <Picture src={ profilePhoto } alt="Una foto de perfil mia tocando el bajo" class="profilePhoto" />
+  <h2>👻 Hola y bienvenido a mi mini blog, soy Nicolás 👻</h2>
+</section>
 
-<section>
+<section class="welcome__content">
   <p>
     Soy un estudiante de ingeniería de sistemas con dos años de experiencia en la industria del desarrollo de software. A través de este blog, quiero compartir conocimientos y aportar a la comunidad mientras sigo aprendiendo.
   </p>
@@ -10,5 +17,30 @@
   <p>
     Si necesitas ayuda con alguno de estos temas, no dudes en contactarme. ¡Estaré encantado de colaborar o aprender juntos!
   </p>
+  <p>
+    Este blog es un espacio donde comparto algunos conocimientos o tambien hago tareas de la universidad. La idea es que sea un lugar donde pueda aprender y compartir con otros.
+  </p>
 </section>
 
+<style>
+  
+  .welcome{
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  .profilePhoto{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 3.5rem auto;
+    display: block;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+
+  .welcome__content{
+    padding: 1rem 0;
+  }
+</style>
