@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from "../const";
+import { SITE_TITLE, SITE_BASE } from "../const";
 ---
 
 <meta charset="UTF-8" />
@@ -8,4 +8,4 @@ import { SITE_TITLE } from "../const";
 <meta name="generator" content={Astro.generator} />
 <title>{ SITE_TITLE }</title>
 
-<link rel="stylesheet" href="/src/style/global.css">
+<link rel="stylesheet" href={`${ SITE_BASE }/src/style/global.css`}>
