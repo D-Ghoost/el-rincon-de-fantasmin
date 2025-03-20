@@ -1,20 +1,21 @@
 ---
 import { Picture } from 'astro:assets';
-import { SITE_TITLE } from '../const';
+import { SITE_TITLE, SITE_BASE } from '../const';
 import logo from '../assets/images/logo_compress.png';
+
 ---
 
 <header>
     <nav role="navigation" class="navbar">
             <h2>
-                <a href="/">
+                <a href={ `${ SITE_BASE }` }>
                     <Picture src={ logo } formats={['png', 'webp']} alt="Un fantasma con ojos tiernos"/>
                     { SITE_TITLE }
                     <Picture src={ logo } formats={['png', 'webp']} alt="Un fantasma con ojos tiernos"/>
                 </a>
             </h2>
         <div class="navbar__nav-links">
-            <a href="/blog">Blog</a>
+            <a href={`${SITE_BASE}/blog`}>Blog</a>
         </div>
         <?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
         <svg class="navbar__burger-menu" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +25,7 @@ import logo from '../assets/images/logo_compress.png';
         </svg>
     </nav>
     <section class="navbar__burger-menu--nav-links" id="burgerMenuLinks">
-        <a href="/blog">Blog</a>
+        <a href={`${SITE_BASE}/blog`}>Blog</a>
     </section>
 </header>
 

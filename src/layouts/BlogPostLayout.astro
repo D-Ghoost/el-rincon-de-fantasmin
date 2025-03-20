@@ -1,4 +1,5 @@
 ---
+import { SITE_BASE } from '../const';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from "../components/BaseHead.astro"
 import Footer from "../components/Footer.astro"
@@ -17,7 +18,7 @@ const { title, date, tags, cover,coverAlt } = Astro.props;
 		<Header/>
 		<main>
 			<article class="blog-post">
-				<img  src={ cover } alt={ coverAlt } class="blog-post__cover" />
+				<img  src={ SITE_BASE + cover } alt={ coverAlt } class="blog-post__cover" />
 				<section class="blog-post__container">	
 					<h2>{ title }</h2>
 					<div>
